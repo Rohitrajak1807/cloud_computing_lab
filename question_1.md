@@ -80,7 +80,7 @@ systemctl start libvirtd.service
   - Enable storage and choose the size of disk image for the VM.
   - On the last page, review your settings. Hit ```Finish``` when ready.
 
-The VM will be provisioned and started with the installation media. You may 
+- The VM will be provisioned and started with the installation media. You may 
 then proceed with OS installation.
 
 #### Post-installation
@@ -99,4 +99,47 @@ virsh shutdown vm_name
 virsh domifaddr vm_name
 virsh console vm_name
 virsh list --all
+```
+
+## Networking
+Libvird, creates a virtual bridged network for the VMs by default, so no further
+configuration is needed.
+
+### Sharing data between host and guest
+Files can be shared between guest and host by using
+```sshfs``` as follows:
+
+```bash
+sshfs vm-name@192.168.122.188:remote-path host/mount/point
+# for example
+sshfs manjarokvm1@192.168.122.188:/home/manjarokvm1 ~/VMShareDir/manjaro
+```
+
+Unmounting can be done via ```fusermount```
+```bash
+fusermount -u host/mount/point
+# for example
+fusermount -u VMShareDir/manjaro
+```
+
+### Sharing data between guests
+```ssh, sftp, ftp``` can be used for sharing data between guests. Here, we
+explore SFTP. Here we assume that two guests are running, and their IP addresses
+are known using ```virsh domifaddr vm-name``` command, and that we are in the
+respective consoles of the guests accessed using ```virsh console vm-name```.
+
+To start an SFTP connection:
+
+```sftp user@ip-of-other-guest```
+
+Enter the password and proceed to the ```sftp``` cli. From this step all the 
+commands are given within the ```sftp``` cli.
+
+```bash
+# downloads the file VM.mp4 to our VM, and places it in $PWD
+sftp> get VM.mp4
+# uploads the file to the other VM
+sftp> put lin.out
+# closes the connection
+sftp> bye
 ```
