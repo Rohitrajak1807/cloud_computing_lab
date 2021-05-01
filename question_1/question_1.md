@@ -73,15 +73,16 @@ systemctl start libvirtd.service
 ### Usage
 - Launch ```virt-manager```
   #### Creating a VM:
-  - Choose ```New Virtual Machine``` from the ```File``` menu.
-  - Choose the installation media type.
-  - Browse for the installation media.
-  - Allocate CPU and Memory to the VM.
-  - Enable storage and choose the size of disk image for the VM.
-  - On the last page, review your settings. Hit ```Finish``` when ready.
-
+  1. Choose ```New Virtual Machine``` from the ```File``` menu.
+  2. Choose the installation media type.
+  3. Browse for the installation media.
+  4. Allocate CPU and Memory to the VM.
+  5. Enable storage and choose the size of disk image for the VM.
+  6. On the last page, review your settings. Hit ```Finish``` when ready.
 - The VM will be provisioned and started with the installation media. You may 
 then proceed with OS installation.
+
+![Creating VM on virt-manager](steps/collage.png "Steps 1 to 6 on virt-manager")
 
 #### Post-installation
 ```bash
