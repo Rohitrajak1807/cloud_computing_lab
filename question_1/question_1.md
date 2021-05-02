@@ -5,9 +5,7 @@
 ```bash
 $ LC_ALL=C lscpu | grep Virtualization
 ```
-
 Alternatively:
-
 ```bash
 $ grep -E --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo
 ```
@@ -20,8 +18,8 @@ If nothing is displayed after running either command, then your processor does
 >  virtualization. If it looks like your processor does not support 
 > virtualization, it's almost certainly turned off in the BIOS.
 
-### Steps for enabling Virtualization(varies by vendor, example follows an ASUS
-### laptop which I currently use)
+### Steps for enabling Virtualization
+### (varies by vendor, example follows an ASUS laptop)
 - Press ```F2``` when powering on.
 - Press ```F7``` to enter Advanced Mode.
 - Navigate to ```Advanced``` tab.
@@ -144,3 +142,8 @@ sftp> put lin.out
 # closes the connection
 sftp> bye
 ```
+
+## Sources
+- [KVM<sup>arch-wiki</sup>](https://wiki.archlinux.org/title/KVM)
+- [QEMU<sup>arch-wiki</sup>](https://wiki.archlinux.org/title/QEMU)
+- [Virt-Manager<sup>manjaro-wiki</sup>](https://wiki.manjaro.org/index.php?title=Virt-manager#Install_virt-manager.2C_qemu_and_all_dependencies)
