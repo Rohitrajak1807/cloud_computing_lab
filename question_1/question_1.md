@@ -109,7 +109,7 @@ Files can be shared between guest and host by using
 ```sshfs``` as follows:
 
 ```bash
-sshfs vm-name@192.168.122.188:remote-path host/mount/point
+sshfs vm-name@ip-address:remote-path host/mount/point
 # for example
 sshfs manjarokvm1@192.168.122.188:/home/manjarokvm1 ~/VMShareDir/manjaro
 ```
