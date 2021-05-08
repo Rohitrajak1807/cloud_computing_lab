@@ -71,6 +71,8 @@ which can be used to browse preexisting records or add a new record.
 
 ## Testing
 
-The deployed web application was tested by accessing it from the host OS as well as from a mobile device connected to the same network. Two new records were added apart from the initial seeding data.
+The deployed web application was tested by accessing it from the host OS as well
+as from a mobile device connected to the same network. Two new records were
+added apart from the initial seeding data.
 
 ![Web application running on the host and a mobile device](steps/collage.png)
