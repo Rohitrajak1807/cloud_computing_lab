@@ -59,11 +59,14 @@ The runner is also an ```Arch Linux``` installation with the following specifica
 - Install ```nodejs``` and ```npm``` as instructed [above](#server-setup)
 
 ## Copying program source code to VMs
-The source code was copied to the VMs using ```sshfs``` as described in [```previous question```](../question_1/question_1.pdf) and also depicted below.
+The source code was copied to the VMs using ```sshfs``` as described in 
+[```previous question```](../question_1/question_1.pdf) and also depicted below.
 ![Mounting VM disks using sshfs](./steps/mounting.png)
 
 ## Brief of the deployed application
-A RESTful API was deployed using the ```Web Server```, ```Database Server``` and the ```Runner Node```. The ```Web Server``` listens on port ```8000``` on route ```POST/submit``` expecting a ```JSON``` document of the following format:
+A RESTful API was deployed using the ```Web Server```, ```Database Server``` and
+ the ```Runner Node```. The ```Web Server``` listens on port ```8000``` on route
+  ```POST/submit``` expecting a ```JSON``` document of the following format:
 ```json
 {
     "src": "source code",
@@ -72,10 +75,15 @@ A RESTful API was deployed using the ```Web Server```, ```Database Server``` and
 }
 ```
 
-On recieving a request for a job, the server responds with a URL which can be used to request for the outcome. The URL is of the form:
-```host:port/result/id```
+On recieving a request for a job, the server makes a database entry with the 
+supplied data and responds with a URL which can be used to request for the outcome. 
+The URL is of the form: ```host:port/result/id```
 
-The server also listens on route ```GET/result/:id``` to process requests for results. It simply returns a ```JSON``` of the following format:
+It then sends the request to the worker which will compile and run 
+the code and record its output(stdout), errors(if any). 
+
+The server also listens on route ```GET/result/:id``` to process requests for 
+results. It simply returns a ```JSON``` of the following format:
 ```json
 {
     "src": "source code",
@@ -89,12 +97,14 @@ The server also listens on route ```GET/result/:id``` to process requests for re
 ```
 ## Testing
 
-The deployed web application was tested by accessing it from the host OS, a sample ```python``` program was given for testing purposes.
+The deployed web application was tested by accessing it from the host OS, a 
+sample ```python``` program was given for testing purposes.
 
 ![Application being tested(from top right to bottom left: 1. Web Server, 2. Database Server, 3. Runner Node, 4. Testing using cURL on host OS)](steps/running.png)
 ![GET request on the web browser](steps/web_browser.png)
 
 ## Shutting down the VMs
-The VMs were shutdown after usage using ```virsh``` as mentioned in [```previous question```](../question_1/question_1.pdf) and also depicted below.
+The VMs were shutdown after usage using ```virsh``` as mentioned in 
+[```previous question```](../question_1/question_1.pdf) and also depicted below.
 
 ![Powering down VMs](./steps/shutdown.png)
