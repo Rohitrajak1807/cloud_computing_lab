@@ -75,12 +75,10 @@ A RESTful API was deployed using the ```Web Server```, ```Database Server``` and
 }
 ```
 
-On recieving a request for a job, the server makes a database entry with the 
-supplied data and responds with a URL which can be used to request for the outcome. 
+On recieving a request for a job, the server makes a database entry with the supplied data and responds with a URL while handing off the work to ```Runner Node```
 The URL is of the form: ```host:port/result/id```
 
-It then sends the request to the worker which will compile and run 
-the code and record its output(stdout), errors(if any). 
+This URL can be used to fetch results or check the status of the job.
 
 The server also listens on route ```GET/result/:id``` to process requests for 
 results. It simply returns a ```JSON``` of the following format:
