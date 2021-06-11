@@ -67,8 +67,10 @@ container.
 
 Logs were examined using ```docker exec```.
 ![docker exec sidecar](./steps/exec_sidecar.png)
+
 Logs are recorded as ```<timestamp> <log-entry>```
 ![Logs](./steps/less_logs.png)
+
 Original logs using ```docker logs``` command is shown below:
 ![docker logs | less](./steps/docker-logs-less.png)
 
