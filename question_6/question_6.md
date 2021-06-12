@@ -24,7 +24,7 @@ systemctl enable --now docker.service
 ```
 
 ## Brief of the logging container
-Docker's [```python``` SDK](https://docs.docker.com/engine/api/sdk/) was used to 
+Docker's [python SDK](https://docs.docker.com/engine/api/sdk/) was used to 
 develop this program. The program expects a configuration file which specifies the
 user that runs the docker daemon on the host and the id of the container. The docker
 SDK uses ```ssh``` to connect to the host and then connects to the docker daemon.
@@ -36,6 +36,15 @@ This program uses a sidecar approach where a container is given it's own logger.
 This avoids having a single point of failure. However, still, some manual configuration 
 is needed before using this logging container. This is intentional and allows for 
 flexibility and customizability.
+
+## Strategy
+- Setup passwordless ```ssh``` from within the container to the host.
+- Log into the host from the container.
+- Connect to the ```docker``` daemon running on the host
+- Use the ```log``` wrapper method to retrieve the logs as a byte stream.
+- Append the bytes into a buffer.
+- Decode the buffer into ```utf-8``` and strip unnecessary characters.
+- Flush the buffer into the file.
 
 ## Configuration
 The program expects a config.json in the source directory housing the following 
@@ -55,6 +64,7 @@ USER=username_with_access_to_docker_daemon
 SSHPASS=password_for_USER_needed_for_passwordless_ssh_setup
 HOST_IP=172.17.0.1_by_default_should_be_overridden_if_the_logging_container_is_not_on_default_network
 ```
+
 ## Testing
 To test the container, it was made to log a ```mongo``` container running on the 
 host machine.
