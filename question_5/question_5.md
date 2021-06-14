@@ -65,7 +65,8 @@ We create a ```Heroku``` account and link it with our ```GitHub``` account.
 ![Heroku Dashboard](./steps/heroku.png)
 
 ## Brief of the application
-The deployed application logs in a user using Google's OAuth servers and displays basic account information. Currently the application is yet to be verified.
+The deployed application logs in a user using Google's OAuth servers and displays basic account information. Currently the application is yet to be verified. 
+It can be accessed via this link: https://g-oauth-demo.herokuapp.com/
 ![Homepage](./steps/before.png)
 ![Signin screen](./steps/during.png)
 ![Final Page](./steps/after.png)
