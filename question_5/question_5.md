@@ -26,21 +26,21 @@ Google API key and client ID for a ```web application``` was created via [Google
 
 5. Support email: Shown on the consent screen for user support and to G Suite administrators evaluating access to your application for their users. This email address will be shown to users on the Sign In With Google consent screen when the user clicks the application name.
 
-6. Scopes for Google APIs: Scopes allow your application to access your user's private Google data. For the authentication, default scope (email, profile, openid) is sufficient, you don’t need to add any sensitive scopes. It is generally a best practice to request scopes incrementally, at the time access is required, rather than up front. Learn more.
+6. Scopes for Google APIs: Scopes allow your application to access your user's private Google data. For the authentication, default scope (email, profile, openid) is sufficient, you don’t need to add any sensitive scopes. It is generally a best practice to request scopes incrementally, at the time access is required, rather than up front.
 
 > Optional:
 >
 > 7. Application logo: An image on the consent screen that will help users recognize your app. The logo is shown on Sign In With Google consent screen and on account settings, whereas it’s not shown on One Tap dialog.
 >
-> 8. Authorized domains: To protect you and your users, Google only allows applications that authenticate using OAuth to use Authorized Domains. Your applications' links must be hosted on Authorized Domains. Learn more.
+> 8. Authorized domains: To protect you and your users, Google only allows applications that authenticate using OAuth to use Authorized Domains. Your applications' links must be hosted on Authorized Domains.
 >
->9. Application Homepage link: Shown on Sign In With Google consent screen and One-Tap GDPR complaint disclaimer information under the “Continue as” button. Must be hosted on an Authorized Domain.
+>9. Application Homepage link: Shown on Sign In With Google consent screen and One-Tap GDPR complaint disclaimer information under the ```Continue as``` button. Must be hosted on an Authorized Domain.
 >
->10. Application Privacy Policy link: Shown on Sign In With Google consent screen and One-Tap GDPR complaint disclaimer information under the “Continue as” button. Must be hosted on an Authorized Domain.
+>10. Application Privacy Policy link: Shown on Sign In With Google consent screen and One-Tap GDPR complaint disclaimer information under the ```Continue as``` button. Must be hosted on an Authorized Domain.
 >
->11. Application Terms of Service link (Optional): Shown on Sign In With Google consent screen and One-Tap GDPR complaint disclaimer information under the “Continue as” button. Must be hosted on an Authorized Domain.
+>11. Application Terms of Service link (Optional): Shown on Sign In With Google consent screen and One-Tap GDPR complaint disclaimer information under the ```Continue as``` button. Must be hosted on an Authorized Domain.
 >
->Check "Verification Status", if your application needs verification then click the "Submit For Verification" button to submit your application for verification. Refer to OAuth verification requirements for details.
+>Check "Verification Status", if your application needs verification then click the ```Submit For Verification``` button to submit your application for verification. Refer to OAuth verification requirements for details.
 
 > Unverified applications can only login test accounts. Verification can take weeks, but is recommended.
 
@@ -65,7 +65,7 @@ We create a ```Heroku``` account and link it with our ```GitHub``` account.
 ![Heroku Dashboard](./steps/heroku.png)
 
 ## Brief of the application
-The deployed application logs in a user using Google's OAuth servers and displays basic account information.
+The deployed application logs in a user using Google's OAuth servers and displays basic account information. Currently the application is yet to be verified.
 ![Homepage](./steps/before.png)
 ![Signin screen](./steps/during.png)
 ![Final Page](./steps/after.png)
