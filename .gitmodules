@@ -4,3 +4,6 @@
 [submodule "question_2/executioner"]
 	path = question_2/executioner
 	url = git@github.com:Rohitrajak1807/executioner
+[submodule "question_5/g-oauth2-demo"]
+	path = question_5/g-oauth2-demo
+	url = git@github.com:Rohitrajak1807/g-oauth2-demo.git
