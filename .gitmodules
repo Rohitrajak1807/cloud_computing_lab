@@ -7,3 +7,6 @@
 [submodule "question_5/g-oauth2-demo"]
 	path = question_5/g-oauth2-demo
 	url = git@github.com:Rohitrajak1807/g-oauth2-demo.git
+[submodule "question_6/sidecar"]
+	path = question_6/sidecar
+	url = git@github.com:Rohitrajak1807/sidecar.git
