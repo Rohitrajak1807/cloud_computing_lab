@@ -96,7 +96,7 @@ results. It simply returns a ```JSON``` of the following format:
 ## Testing
 
 The deployed web application was tested by accessing it from the host OS, a 
-sample ```python``` program was given for testing purposes.
+sample ```python``` program was given for testing.
 
 ![Application being tested(from top right to bottom left: 1. Web Server, 2. Database Server, 3. Runner Node, 4. Testing using cURL on host OS)](steps/running.png)
 ![GET request on the web browser](steps/web_browser.png)
